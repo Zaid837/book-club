@@ -1,0 +1,119 @@
+$lightText: #aaaaaa;
+$bodyText: #000000;
+$primaryColor: #65c100;
+$whiteBackground: #ffffff;
+$pageBackground: #fefefe;
+$line: #eeeeee;
+
+@mixin listItems {
+  li {
+    list-style-type: none;
+    margin-bottom: 13px;
+    a {
+      text-decoration: none;
+      color: $bodyText;
+      font-size: 14px;
+      font-weight: 500;
+      .active {
+        color: $primaryColor;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@mixin navList {
+  .nav-list {
+    display: flex;
+    justify-content: space-between;
+    .notification-count {
+      background: $primaryColor;
+      padding: 3px 7px;
+      border-radius: 50%;
+      color: #ffffff;
+      font-size: 12px;
+    }
+    .count {
+      font-size: 12px;
+      color: $lightText;
+    }
+  }
+}
+
+@mixin figCaption {
+  .book-name {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .text-success {
+    color: $primaryColor;
+    margin-bottom: 12px;
+  }
+  .text-danger {
+    color: #d0011b;
+    margin-bottom: 12px;
+  }
+  p {
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+  h5 {
+    margin-bottom: 3px;
+  }
+  .rating-likes {
+    display: flex;
+    margin-top: 6px;
+    .rating {
+      margin-right: 8px;
+    }
+    @include line();
+    .icon-count {
+      margin-left: 10px;
+    }
+  }
+}
+
+@mixin line {
+  .line {
+    height: 25px;
+    width: 1px;
+    background: #dddddd;
+  }
+}
+@mixin bookInfo {
+  .info {
+    margin-left: 12px;
+    margin-top: 25px;
+    width: 100%;
+    @include figCaption();
+  }
+}
+
+@mixin brandLogo($visibility) {
+  .brand-logo {
+    display: flex;
+    visibility: $visibility;
+    .logo {
+      width: 50px;
+      @include responsive(mobile) {
+        width: 40px;
+      }
+    }
+    .logo-side {
+      margin-left: 15px;
+      margin-top: 7px;
+      @include responsive(mobile) {
+        display: none;
+      }
+      .logo-name {
+        font-size: 18px;
+        font-weight: 400;
+      }
+      .user {
+        margin-top: 3px;
+        font-size: 12px;
+        color: $lightText;
+      }
+    }
+  }
+}

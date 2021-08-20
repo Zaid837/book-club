@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@import '_mediaQueries';
+@import '_var';
+@import '_header';
+@import '_sidebar';
+@import '_dashboard';
+body {
+  font-family: 'Ubuntu', sans-serif;
+  overflow: hidden;
+  width: 100%;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+.mobile {
+  display: none;
+}
+.desktop {
+  display: block;
+}

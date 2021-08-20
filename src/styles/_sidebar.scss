@@ -1,0 +1,77 @@
+@import '_mediaQueries';
+
+.sidebar {
+  // flex: 0 1 25%;
+  width: 25%;
+  height: 100%;
+  box-shadow: -10px 0px 40px rgba(0, 0, 0, 0.1);
+  background: $whiteBackground;
+  overflow-y: scroll;
+  padding-bottom: 120px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  @include responsive(mobile) {
+    position: absolute;
+    top: -70px;
+    width: 80%;
+    left: -80%;
+    z-index: 200;
+    background: #f9f9fb;
+    transition: all 0.5s ease-in-out;
+  }
+  .sidebar-menu {
+    padding: 22px 30px 0px 40px;
+    .sidebar-close {
+      display: none;
+      @include responsive(mobile) {
+        display: block;
+      }
+    }
+    .brand-logo {
+      display: flex;
+      visibility: hidden;
+      margin-top: 27px;
+      margin-bottom: 22px;
+      @include responsive(mobile) {
+        visibility: visible;
+      }
+      .logo {
+        width: 50px;
+        @include responsive(mobile) {
+          width: 40px;
+        }
+      }
+      .logo-side {
+        margin-left: 15px;
+        margin-top: 7px;
+        .logo-name {
+          font-size: 18px;
+          font-weight: 400;
+        }
+        .user {
+          margin-top: 3px;
+          font-size: 12px;
+          color: $lightText;
+        }
+      }
+    }
+    .home {
+      @include listItems();
+      @include navList();
+    }
+    .explore {
+      @include listItems();
+      @include navList();
+    }
+    .nav-title {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 28px;
+      a {
+        text-decoration: none;
+        color: $bodyText;
+      }
+    }
+  }
+}

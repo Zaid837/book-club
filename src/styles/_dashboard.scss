@@ -1,0 +1,184 @@
+@import '_mediaQueries';
+
+.dashboard {
+  display: flex;
+  position: relative;
+  top: 70px;
+  height: 100vh;
+  @include responsive(tablet) {
+    top: 70px;
+  }
+  hr {
+    border-top: 1px solid $line;
+    margin: 22px 0;
+  }
+  main {
+    flex: 1 1 70%;
+    height: 100%;
+    overflow: scroll;
+    padding-bottom: 100px;
+    .slider-btns {
+      position: absolute;
+      top: 90px;
+      left: 0px;
+      z-index: 1;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .grid-1 {
+      margin-top: 50px;
+      @include responsive(mobile) {
+        display: none;
+      }
+    }
+    .featured {
+      padding: 26px 40px;
+
+      .featured-title {
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+      hr {
+        border-top: 1px solid $line;
+        margin-bottom: 0;
+      }
+      .all-books {
+        margin-top: 25px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        font-size: 12px;
+        .book-info {
+          display: flex;
+          flex: 0 1 30%;
+          margin-bottom: 20px;
+          @include bookInfo;
+        }
+      }
+    }
+    .featured-books {
+      display: flex;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      height: 400px;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      @include responsive(mobile) {
+        margin-top: 20px;
+      }
+      .flickity-viewport {
+        position: static;
+      }
+      .flickity-page-dots {
+        height: 60px;
+        .dot {
+          width: 8px;
+          height: 8px;
+        }
+        .is-selected {
+          opacity: 1;
+          background: $primaryColor;
+        }
+      }
+      .flickity-button {
+        background: linear-gradient(
+          180deg,
+          rgba(248, 248, 250, 0.8) 0%,
+          #f8f8fa 51.36%,
+          rgba(248, 248, 250, 0.8) 100%
+        );
+        opacity: 0.8;
+        cursor: pointer;
+      }
+      .flickity-prev-next-button {
+        top: 0;
+        width: 40px;
+        height: 405px;
+        border-radius: 0;
+        transform: none;
+      }
+      .flickity-prev-next-button.next {
+        right: 0px;
+      }
+      .flickity-prev-next-button.previous {
+        left: 0px;
+      }
+      .image-card {
+        position: relative;
+        width: 220px;
+        margin-right: 20px;
+        box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+        .cancel {
+          font-size: 32px;
+          color: #fff;
+          display: none;
+          position: absolute;
+          right: 25px;
+          top: 15px;
+          z-index: 1000;
+        }
+        .mobile-overlay {
+          position: absolute;
+          right: 15px;
+          top: 15px;
+          display: none;
+          z-index: 100;
+          @include responsive(mobile) {
+            display: block;
+            cursor: pointer;
+          }
+        }
+        img {
+          display: block;
+        }
+        .image-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          color: #ffffff;
+          background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.607988) 0%,
+            #000000 79.7%
+          );
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          transition: opacity 0.25s;
+          &:hover {
+            opacity: 1;
+            @include responsive(mobile) {
+              opacity: 0;
+            }
+          }
+          @include figCaption;
+          .status {
+            margin-bottom: 20px;
+          }
+          .label {
+            margin-bottom: 20px;
+          }
+          .fig-name {
+            font-size: 18px;
+            margin-bottom: 5px;
+          }
+          .author {
+            margin-bottom: 20px;
+          }
+          .mb-2 {
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+}

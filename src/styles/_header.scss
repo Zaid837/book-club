@@ -1,0 +1,92 @@
+@import '_mediaQueries';
+
+header {
+  position: fixed;
+  z-index: 10;
+  background: white;
+  width: 100%;
+  .container {
+    padding: 0 3%;
+    border: 1px solid #eeeeee;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
+    @include responsive(mobile) {
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    }
+  }
+  nav {
+    padding: 2% 0;
+    display: flex;
+    justify-content: space-between;
+    .burger-menu {
+      display: none;
+      @include responsive(mobile) {
+        display: block;
+      }
+    }
+    @include brandLogo(visible);
+    .back {
+      margin-top: -20px;
+      display: none;
+    }
+    .search-box {
+      // flex: 0 1 40%;
+      width: 40%;
+      display: flex;
+      position: relative;
+      @include responsive(tablet) {
+        display: none;
+      }
+
+      .auto-complete {
+        display: none;
+        position: absolute;
+        top: 45px;
+        width: 100%;
+        border: 1px solid #eeeeee;
+        box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
+        padding: 30px;
+        background: $whiteBackground;
+        z-index: 10;
+        p {
+          margin-bottom: 23px;
+          font-size: 14px;
+          span {
+            color: #999999;
+          }
+        }
+      }
+      input[type='search'] {
+        margin-top: 5px;
+        width: 501px;
+        height: 40px;
+        padding: 11px 20px;
+        border: 1px solid #dddddd;
+        font-size: 14px;
+        font-family: 'Ubuntu', sans-serif;
+        color: #999999;
+      }
+      .search-btn {
+        width: 40px;
+        height: 40px;
+        margin-top: 5px;
+        cursor: pointer;
+      }
+    }
+    .search {
+      display: none;
+      @include responsive(tablet) {
+        display: block;
+      }
+    }
+    .nav-icons {
+      display: flex;
+      img {
+        margin-left: 10px;
+        cursor: pointer;
+        @include responsive(mobile) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

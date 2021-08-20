@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zaid's Book Club</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- font style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- flickity carousel -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+      media="screen"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar">
+          <!-- hamburger icon -->
+          <img
+            src="./assets/images/hamburger.svg"
+            alt="hamburger menu"
+            class="burger-menu"
+          />
+          <div class="brand-logo">
+            <img src="./assets/images/logo.svg" alt="brand-logo" class="logo" />
+            <div class="logo-side">
+              <h5 class="logo-name">My Book Club</h5>
+              <p class="user">Admin</p>
+            </div>
+          </div>
+          <img src="./assets/images/back.svg" alt="back" class="back" />
+          <div class="search-box">
+            <div class="auto-complete">
+              <p>Built to Last <span>- Jim Collins, Jerry I.Porras...</span></p>
+              <p>Four Steps To The Epiph<span>any - James McEnroe</span></p>
+              <p>The Lean Start Up <span>- Eric Reiss</span></p>
+              <p><span>No Excuses - Brian Tracy</span></p>
+            </div>
+            <input
+              type="search"
+              name="search"
+              id="search-box"
+              autocomplete="off"
+              placeholder="Search books,genres,authors,etc."
+            />
+            <img
+              src="./assets/images/icon-button.svg"
+              alt="search-btn"
+              class="search-btn"
+            />
+          </div>
+          <div class="nav-icons">
+            <img src="./assets/images/search.svg" alt="search" class="search" />
+            <img src="./assets/images/libraries.svg" alt="library-icon" />
+            <img src="./assets/images/badged icon.svg" alt="icon-badge" />
+            <img src="./assets/images/avatar.svg" alt="avatar" class="logo" />
+          </div>
+        </nav>
+        <!-- Navbar ends -->
+      </div>
+    </header>
+    <!-- header ends -->
+    <!-- content area begins -->
+    <div class="dashboard">
+      <div class="sidebar">
+        <!-- sidebar menu 1 -->
+        <div class="sidebar-menu">
+          <img
+            src="./assets/images/back.svg"
+            alt="back"
+            class="sidebar-close"
+          />
+          <div class="brand-logo">
+            <img src="./assets/images/logo.svg" alt="brand-logo" class="logo" />
+            <div class="logo-side">
+              <h5 class="logo-name">My Book Club</h5>
+              <p class="user">Admin</p>
+            </div>
+          </div>
+          <ul class="home">
+            <li class="nav-menu">
+              <a href=""><span class="active">Home</span></a>
+            </li>
+            <li class="nav-menu"><a href="">Profile</a></li>
+            <li class="nav-list">
+              <a href="">Notifications</a
+              ><span class="notification-count">3</span>
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <!-- sidebar menu 1 ends -->
+        <!--  sidebar menu 2 -->
+        <div class="sidebar-menu">
+          <p class="nav-title"><a href="">Explore</a></p>
+          <ul class="explore">
+            <li class="nav-list">
+              <a href="">Books</a>
+              <span class="count">273</span>
+            </li>
+            <li class="nav-list">
+              <a href="">Genres</a>
+              <span class="count">42</span>
+            </li>
+
+            <li class="nav-list">
+              <a href="">Authors</a><span class="count">106</span>
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <!-- sidebar menu 2 ends -->
+        <!-- sidebar menu 3 -->
+        <div class="sidebar-menu">
+          <p class="nav-title"><a href="">My Books</a></p>
+          <ul class="explore">
+            <li class="nav-list">
+              <a href="">Queued</a>
+              <span class="count">3</span>
+            </li>
+            <li class="nav-list">
+              <a href="">Currently Borrowed</a>
+              <span class="count">0</span>
+            </li>
+
+            <li class="nav-list">
+              <a href="">Favourites</a><span class="count">19</span>
+            </li>
+            <li class="nav-list">
+              <a href="">History</a>
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <!-- sidebar menu 3 ends -->
+        <!-- sidebar menu 4 -->
+        <div class="sidebar-menu">
+          <p class="nav-title"><a href="">Admin</a></p>
+          <ul class="explore">
+            <li class="nav-list">
+              <a href="">Book Requests</a
+              ><span class="notification-count">2</span>
+            </li>
+            <li class="nav-list">
+              <a href="">Members</a>
+              <span class="count">34</span>
+            </li>
+            <li class="nav-list">
+              <a href="">Library Settings</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- sidebar menu 4 ends -->
+      </div>
+      <main class="content-area">
+        <div class="featured grid-1">
+          <p class="featured-title">FEATURED BOOKS</p>
+          <hr />
+        </div>
+        <!-- featured books -->
+        <div
+          class="featured-books"
+          data-flickity='{ "cellAlign": "left", "contain":true, "wrapAround": true }'
+        >
+          <div class="image-card">
+            <span class="cancel">&times;</span>
+            <img
+              src="./assets/images/details-toggle.png"
+              alt="mobile-toggle-icon"
+              class="mobile-overlay"
+            />
+            <img src="./assets/images/big magic.png" alt="big-magic-book" />
+            <div class="image-overlay">
+              <figcaption class="info">
+                <p class="text-success status">Available</p>
+                <h5 class="fig-name">Big Magic</h5>
+                <p class="author">Elizabeth Gilbert - 2009</p>
+                <p>Genre:Motivational</p>
+                <p class="label">Labels:Creative, Self-help</p>
+                <div class="rating-likes">
+                  <div class="rating">
+                    <p class="mb-2">Ratings: 4.0</p>
+                    <img src="./assets/images/Group 3.png" alt="rating-stars" />
+                  </div>
+                  <div class="line"></div>
+                  <div class="likes">
+                    <div class="row">
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape-alt.png"
+                          alt="icon-users"
+                          class="mb-2"
+                        />
+                        <p>31</p>
+                      </div>
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape-alt (1).png"
+                          alt="icon-heart"
+                          class="mb-2"
+                        />
+                        <p>29</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figcaption>
+            </div>
+          </div>
+          <div class="image-card">
+            <span class="cancel">&times;</span>
+            <img
+              src="./assets/images/details-toggle.png"
+              alt="mobile-toggle-icon"
+              class="mobile-overlay"
+            />
+            <img
+              src="./assets/images/effective python.png"
+              alt="effective-python-book"
+            />
+            <div class="image-overlay">
+              <figcaption class="info">
+                <p class="text-success status">Available</p>
+                <h5 class="fig-name">Effective Python</h5>
+                <p class="author">Diomidis Spinellis</p>
+                <p>Genre:Motivational</p>
+                <p class="label">Labels:Creative, Self-help</p>
+                <div class="rating-likes">
+                  <div class="rating">
+                    <p class="mb-2">Ratings: 4.0</p>
+                    <img src="./assets/images/Group 3.png" alt="rating-stars" />
+                  </div>
+                  <div class="line"></div>
+                  <div class="likes">
+                    <div class="row">
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape-alt.png"
+                          alt="icon-users"
+                          class="mb-2"
+                        />
+                        <p>31</p>
+                      </div>
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape-alt (1).png"
+                          alt="icon-heart"
+                          class="mb-2"
+                        />
+                        <p>29</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figcaption>
+            </div>
+          </div>
+          <div class="image-card">
+            <span class="cancel">&times;</span>
+            <img
+              src="./assets/images/details-toggle.png"
+              alt="mobile-toggle-icon"
+              class="mobile-overlay"
+            />
+            <img
+              src="./assets/images/built to last.png"
+              alt="built to last book"
+            />
+            <div class="image-overlay">
+              <figcaption class="info">
+                <p class="text-success status">Available</p>
+                <h5 class="fig-name">Built to Last</h5>
+                <p class="author">Jim Collins, Jerry I.Porras - 2001</p>
+                <p>Genre:Motivational</p>
+                <p class="label">Labels:Creative, Self-help</p>
+                <div class="rating-likes">
+                  <div class="rating">
+                    <p class="mb-2">Ratings: 4.0</p>
+                    <img src="./assets/images/Group 3.png" alt="rating-stars" />
+                  </div>
+                  <div class="line"></div>
+                  <div class="likes">
+                    <div class="row">
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape-alt.png"
+                          alt="icon-users"
+                          class="mb-2"
+                        />
+                        <p>31</p>
+                      </div>
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape-alt (1).png"
+                          alt="icon-heart"
+                          class="mb-2"
+                        />
+                        <p>29</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figcaption>
+            </div>
+          </div>
+          <div class="image-card">
+            <span class="cancel">&times;</span>
+            <img
+              src="./assets/images/details-toggle.png"
+              alt="mobile-toggle-icon"
+              class="mobile-overlay"
+            />
+            <img
+              src="./assets/images/the lean startup.png"
+              alt="lean-startup-book"
+            />
+            <div class="image-overlay">
+              <figcaption class="info">
+                <p class="text-success status">Available</p>
+                <h5 class="fig-name">The Lean Startup</h5>
+                <p class="author">Eric Reis - 2005</p>
+                <p>Genre:Motivational</p>
+                <p class="label">Labels:Creative, Self-help</p>
+                <div class="rating-likes">
+                  <div class="rating">
+                    <p class="mb-2">Ratings: 4.0</p>
+                    <img src="./assets/images/Group 3.png" alt="rating-stars" />
+                  </div>
+                  <div class="line"></div>
+                  <div class="likes">
+                    <div class="row">
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape-alt.png"
+                          alt="icon-users"
+                          class="mb-2"
+                        />
+                        <p>31</p>
+                      </div>
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape-alt (1).png"
+                          alt="icon-heart"
+                          class="mb-2"
+                        />
+                        <p>29</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figcaption>
+            </div>
+          </div>
+          <div class="image-card">
+            <span class="cancel">&times;</span>
+            <img
+              src="./assets/images/details-toggle.png"
+              alt="mobile-toggle-icon"
+              class="mobile-overlay"
+            />
+            <img src="./assets/images/big magic.png" alt="big-magic-book" />
+            <div class="image-overlay">
+              <figcaption class="info">
+                <p class="text-success status">Available</p>
+                <h5 class="fig-name">Big Magic</h5>
+                <p class="author">Elizabeth Gilbert - 2009</p>
+                <p>Genre:Motivational</p>
+                <p class="label">Labels:Creative, Self-help</p>
+                <div class="rating-likes">
+                  <div class="rating">
+                    <p class="mb-2">Ratings: 4.0</p>
+                    <img src="./assets/images/Group 3.png" alt="rating-stars" />
+                  </div>
+                  <div class="line"></div>
+                  <div class="likes">
+                    <div class="row">
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape-alt.png"
+                          alt="icon-users"
+                          class="mb-2"
+                        />
+                        <p>31</p>
+                      </div>
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape-alt (1).png"
+                          alt="icon-heart"
+                          class="mb-2"
+                        />
+                        <p>29</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figcaption>
+            </div>
+          </div>
+          <div class="image-card">
+            <span class="cancel">&times;</span>
+            <img
+              src="./assets/images/details-toggle.png"
+              alt="mobile-toggle-icon"
+              class="mobile-overlay"
+            />
+            <img
+              src="./assets/images/effective python.png"
+              alt="effective-python-book"
+            />
+            <div class="image-overlay">
+              <figcaption class="info">
+                <p class="text-success status">Available</p>
+                <h5 class="fig-name">Effective Python</h5>
+                <p class="author">Diomidis Spinellis</p>
+                <p>Genre:Motivational</p>
+                <p class="label">Labels:Creative, Self-help</p>
+                <div class="rating-likes">
+                  <div class="rating">
+                    <p class="mb-2">Ratings: 4.0</p>
+                    <img src="./assets/images/Group 3.png" alt="rating-stars" />
+                  </div>
+                  <div class="line"></div>
+                  <div class="likes">
+                    <div class="row">
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape-alt.png"
+                          alt="icon-users"
+                          class="mb-2"
+                        />
+                        <p>31</p>
+                      </div>
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape-alt (1).png"
+                          alt="icon-heart"
+                          class="mb-2"
+                        />
+                        <p>29</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figcaption>
+            </div>
+          </div>
+          <div class="image-card">
+            <span class="cancel">&times;</span>
+            <img
+              src="./assets/images/details-toggle.png"
+              alt="mobile-toggle-icon"
+              class="mobile-overlay"
+            />
+            <img
+              src="./assets/images/built to last.png"
+              alt="built to last book"
+            />
+            <div class="image-overlay">
+              <figcaption class="info">
+                <p class="text-success status">Available</p>
+                <h5 class="fig-name">Built to Last</h5>
+                <p class="author">Jim Collins, Jerry I.Porras - 2001</p>
+                <p>Genre:Motivational</p>
+                <p class="label">Labels:Creative, Self-help</p>
+                <div class="rating-likes">
+                  <div class="rating">
+                    <p class="mb-2">Ratings: 4.0</p>
+                    <img src="./assets/images/Group 3.png" alt="rating-stars" />
+                  </div>
+                  <div class="line"></div>
+                  <div class="likes">
+                    <div class="row">
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape-alt.png"
+                          alt="icon-users"
+                          class="mb-2"
+                        />
+                        <p>31</p>
+                      </div>
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape-alt (1).png"
+                          alt="icon-heart"
+                          class="mb-2"
+                        />
+                        <p>29</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figcaption>
+            </div>
+          </div>
+          <div class="image-card">
+            <span class="cancel">&times;</span>
+            <img
+              src="./assets/images/details-toggle.png"
+              alt="mobile-toggle-icon"
+              class="mobile-overlay"
+            />
+            <img
+              src="./assets/images/the lean startup.png"
+              alt="lean-startup-book"
+            />
+            <div class="image-overlay">
+              <figcaption class="info">
+                <p class="text-success status">Available</p>
+                <h5 class="fig-name">The Lean Startup</h5>
+                <p class="author">Eric Reis - 2005</p>
+                <p>Genre:Motivational</p>
+                <p class="label">Labels:Creative, Self-help</p>
+                <div class="rating-likes">
+                  <div class="rating">
+                    <p class="mb-2">Ratings: 4.0</p>
+                    <img src="./assets/images/Group 3.png" alt="rating-stars" />
+                  </div>
+                  <div class="line"></div>
+                  <div class="likes">
+                    <div class="row">
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape-alt.png"
+                          alt="icon-users"
+                          class="mb-2"
+                        />
+                        <p>31</p>
+                      </div>
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape-alt (1).png"
+                          alt="icon-heart"
+                          class="mb-2"
+                        />
+                        <p>29</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figcaption>
+            </div>
+          </div>
+        </div>
+        <!-- featured books end -->
+        <!-- library section -->
+        <!-- recently added books -->
+        <div class="featured">
+          <p class="featured-title">RECENTLY ADDED</p>
+          <hr />
+          <div class="all-books">
+            <figure class="book-info">
+              <img
+                src="./assets/images/effective engineer 2.png"
+                alt="effective engineer"
+              />
+              <figcaption class="info">
+                <p class="text-success">Available</p>
+                <h5 class="book-name">The Effective Engineer</h5>
+                <p>Edmond Lau - 2009</p>
+                <p>Motivational</p>
+                <div class="rating-likes">
+                  <div class="rating">
+                    <p>Ratings: 4.0</p>
+                    <img src="./assets/images/Group 3.png" alt="rating-stars" />
+                  </div>
+                  <div class="line"></div>
+                  <div class="likes">
+                    <div class="row">
+                      <div class="icon-count">
+                        <img src="./assets/images/Shape.png" alt="icon-users" />
+                        <p>31</p>
+                      </div>
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape (1).png"
+                          alt="icon-heart"
+                        />
+                        <p>29</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="book-info">
+              <img
+                src="./assets/images/effective engineer 2.png"
+                alt="effective engineer"
+              />
+              <figcaption class="info">
+                <p class="text-success">Available</p>
+                <h5 class="book-name">The Effective Engineer</h5>
+                <p>Edmond Lau - 2009</p>
+                <p>Motivational</p>
+                <div class="rating-likes">
+                  <div class="rating">
+                    <p>Ratings: 4.0</p>
+                    <img src="./assets/images/Group 3.png" alt="rating-stars" />
+                  </div>
+                  <div class="line"></div>
+                  <div class="likes">
+                    <div class="row">
+                      <div class="icon-count">
+                        <img src="./assets/images/Shape.png" alt="icon-users" />
+                        <p>31</p>
+                      </div>
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape (1).png"
+                          alt="icon-heart"
+                        />
+                        <p>29</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+
+            <figure class="book-info">
+              <img
+                src="./assets/images/the lean startup 2.png"
+                alt="lean startup"
+              />
+              <figcaption class="info">
+                <p class="text-success">Available</p>
+                <h5 class="book-name">The Lean Startup</h5>
+                <p>Eric Reis - 2005</p>
+                <p>Motivational</p>
+                <div class="rating-likes">
+                  <div class="rating">
+                    <p>Ratings: 4.0</p>
+                    <img src="./assets/images/Group 3.png" alt="rating-stars" />
+                  </div>
+                  <div class="line"></div>
+                  <div class="likes">
+                    <div class="row">
+                      <div class="icon-count">
+                        <img src="./assets/images/Shape.png" alt="icon-users" />
+                        <p>31</p>
+                      </div>
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape (1).png"
+                          alt="icon-heart"
+                        />
+                        <p>29</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="book-info">
+              <img
+                src="./assets/images/effective python 2.png"
+                alt="effective engineer"
+              />
+              <figcaption class="info">
+                <p class="text-success">Available</p>
+                <h5 class="book-name">Effective Python</h5>
+                <p>Diomidis Spinellis</p>
+                <p>Motivational</p>
+                <div class="rating-likes">
+                  <div class="rating">
+                    <p>Ratings: 4.0</p>
+                    <img src="./assets/images/Group 3.png" alt="rating-stars" />
+                  </div>
+                  <div class="line"></div>
+                  <div class="likes">
+                    <div class="row">
+                      <div class="icon-count">
+                        <img src="./assets/images/Shape.png" alt="icon-users" />
+                        <p>31</p>
+                      </div>
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape (1).png"
+                          alt="icon-heart"
+                        />
+                        <p>29</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <!-- recently added ends -->
+        <!-- all books section -->
+        <div class="featured">
+          <p class="featured-title">ALL BOOKS</p>
+          <hr />
+          <div class="all-books">
+            <figure class="book-info">
+              <img
+                src="./assets/images/effective engineer 2.png"
+                alt="effective engineer"
+              />
+              <figcaption class="info">
+                <p class="text-success">Available</p>
+                <h5 class="book-name">The Effective Engineer</h5>
+                <p>Edmond Lau - 2009</p>
+                <p>Motivational</p>
+                <div class="rating-likes">
+                  <div class="rating">
+                    <p>Ratings: 4.0</p>
+                    <img src="./assets/images/Group 3.png" alt="rating-stars" />
+                  </div>
+                  <div class="line"></div>
+                  <div class="likes">
+                    <div class="row">
+                      <div class="icon-count">
+                        <img src="./assets/images/Shape.png" alt="icon-users" />
+                        <p>31</p>
+                      </div>
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape (1).png"
+                          alt="icon-heart"
+                        />
+                        <p>29</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="book-info">
+              <img
+                src="./assets/images/built to last 2.png"
+                alt="built to last"
+              />
+              <figcaption class="info">
+                <p class="text-danger">Borrowed Out</p>
+                <h5 class="book-name">Built To Last</h5>
+                <p>Jim Collins, Jerry I. Porras - 2001</p>
+                <p>Business, Entrepreneurship</p>
+                <div class="rating-likes">
+                  <div class="rating">
+                    <p>Ratings: 4.0</p>
+                    <img src="./assets/images/Group 3.png" alt="rating-stars" />
+                  </div>
+                  <div class="line"></div>
+                  <div class="likes">
+                    <div class="row">
+                      <div class="icon-count">
+                        <img src="./assets/images/Shape.png" alt="icon-users" />
+                        <p>31</p>
+                      </div>
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape (1).png"
+                          alt="icon-heart"
+                        />
+                        <p>29</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+
+            <figure class="book-info">
+              <img
+                src="./assets/images/the lean startup 2.png"
+                alt="lean startup"
+              />
+              <figcaption class="info">
+                <p class="text-success">Available</p>
+                <h5 class="book-name">The Lean Startup</h5>
+                <p>Eric Reis - 2005</p>
+                <p>Motivational</p>
+                <div class="rating-likes">
+                  <div class="rating">
+                    <p>Ratings: 4.0</p>
+                    <img src="./assets/images/Group 3.png" alt="rating-stars" />
+                  </div>
+                  <div class="line"></div>
+                  <div class="likes">
+                    <div class="row">
+                      <div class="icon-count">
+                        <img src="./assets/images/Shape.png" alt="icon-users" />
+                        <p>31</p>
+                      </div>
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape (1).png"
+                          alt="icon-heart"
+                        />
+                        <p>29</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="book-info">
+              <img
+                src="./assets/images/effective python 2.png"
+                alt="effective engineer"
+              />
+              <figcaption class="info">
+                <p class="text-success">Available</p>
+                <h5 class="book-name">Effective Python</h5>
+                <p>Diomidis Spinellis</p>
+                <p>Motivational</p>
+                <div class="rating-likes">
+                  <div class="rating">
+                    <p>Ratings: 4.0</p>
+                    <img src="./assets/images/Group 3.png" alt="rating-stars" />
+                  </div>
+                  <div class="line"></div>
+                  <div class="likes">
+                    <div class="row">
+                      <div class="icon-count">
+                        <img src="./assets/images/Shape.png" alt="icon-users" />
+                        <p>31</p>
+                      </div>
+                      <div class="icon-count">
+                        <img
+                          src="./assets/images/Shape (1).png"
+                          alt="icon-heart"
+                        />
+                        <p>29</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <!-- all books section ends -->
+        <!-- library section ends -->
+      </main>
+    </div>
+    <!-- content area ends -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
